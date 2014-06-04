@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+
+  "name": "PROC manual de errores tipicos",
+  "description": "This extension demonstrates a 'browser action' with kittens.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "proc-icon.png",
+    "default_popup": "migracion.html"
+  }
+}

@@ -1,0 +1,4 @@
+
+
+
+* revisar estados de gira

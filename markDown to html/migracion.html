@@ -1,0 +1,77 @@
+<html>
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="strapdown.css">
+<link rel="stylesheet" href="bootstrap-responsive.min.css">
+
+<title>Manual de errores tipicos</title>
+
+<xmp theme="united" style="display:none;">
+
+###MIGRACION
+
+#####CSV
+
+1. los archivos deben tenes encabezado
+2. los archivos deben estar separados por "," (coma)
+3. todas las reglas deben tener una categoria default, la cual **debe** ser proporcionada por la gente de producto.
+4. de haber archivos de keywords controlar que los nombres en el archivo de migracion sea **exactamente** los mismos
+
+
+#####COMMIT
+1. AMBIENTES Y COMMIT
+	* tanto para l ambiente de "DEV", como en "TESTING" los archivos **.csv** deben comitearce a el repo de **olx-scripts** parados en el branch de **develop**.
+		* tipsutiles para git: 
+		1. para saber en donde estas parado: `$ git branch`
+		2. para cambiar de mastera a dev: `$ git checkout develop`
+		3. y para cambiar de dev a mastera: `$ git checkout master`
+2. el archivo **.csv** de migracion debe colocarse en la carpeta *olx-scripts/one-time-scripts/sas/cattree/files/(id_pais)/*
+3. si tiene archivos de keyword deben colocarse en la carpeta *olx-scripts/one-time-scripts/sas/cattree/files/(id_pais)/keywords/*
+
+** 1. Open:** generalmente es un ticket sin especificar o que no se va a desarrollar en el corto plazo.
+
+** 2. Selected:** el ticket se va a implementar en el corto plazo, pero todavia no esta planificado o falta alguna especificacion.
+
+** 3. Ready to DEV:** el ticket ya esta planificado y con las especificaciones completas. Se puede desarrollar.
+
+** 4. In Progress:** el ticket esta siendo desarrollado.
+
+** 5. Developed:** el proyecto ya esta desarrollado. No fue deployado en ningun ambiente de testing. Se puede testear en DEV.
+	![jira paso 5](jira-estado-5.png "jira-estado-5")
+
+** 6. Ready to Test:** el proyecto ya fue deployado en TESTING. Se puede testear en dicho ambiente.
+	![jira paso 6](jira-estado-6.png "jira-estado-6")
+	*durante el testeo ![jira paso 6-b](jira-estado-6-b.png "jira-estado-6-b")
+
+** 7. Resolved:** el proyecto esta OK en TESTING y puede pasar a STAGING.
+	![jira paso 7](jira-estado-7.png "jira-estado-7")
+	
+** 8. Ready to Live:** el ticket esta OK en STAGING, puede deployarse a Produccion.
+** 9. Closed:** El ticket esta OK en Produccion.
+
+
+</xmp>
+<script src="strapdown.js"></script>
+<style>
+	body{
+		font-size: 12px;
+		width: 500px;
+		padding-left: .7em;
+	}
+	.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner{
+		background-color: #d44413;
+		min-height: 40px;
+		border: 1px solid #c64012;
+		width: 100%;
+	}
+	.brand {
+float: left;
+display: block;
+padding: 10px 20px 10px;
+margin-left: -20px;
+font-size: 20px;
+font-weight: 200;
+color: #ffffff;
+text-shadow: 0 1px 0 #ce4213;
+}
+</style>
+</html>
