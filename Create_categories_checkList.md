@@ -5,6 +5,7 @@
 * en el campo ACTOIN si hay 2 idiomas, va el idioma default de el pais en USE, o NEW (si el id de la categoria es nuevo completamente), y el otro en lenguage, por lo general ingles es el segundo idioma para latinoamerica, pero en otros esel principal, ojo con eso.
 
 #####Querys utiles 
+**buscar el ID de un idioma por su nombre**  `SELECT * from geodesic_olx_languages WHERE language_name LIKE '%spani%';`
 **buscar un pais por nombre:** `SELECT country_id,name,olx_url,OLXCountry FROM geodesic_countries WHERE name like 'ecua%';`
 **buscar en que paises esta una categoria** `SELECT country_id, category_id FROM olx_country_category WHERE category_id=821;`
 **buscar las categorias que hay en un pais** `SELECT country_id, country_id, category_id FROM olx_country_category WHERE country_id=62 and category_id < 1000;`
