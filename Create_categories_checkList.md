@@ -24,4 +24,4 @@
 `SELECT t1.country_id,t2.parent_id,t2.category_id,t1.category_id,t2.category_name FROM olx_country_category AS t1, geodesic_categories AS t2 WHERE t1.category_id < 1000 and t2.category_id < 1000 and t2.parent_id=821 and t1.country_id=62;`
 
 **ver idiomas de paìses**
-'SELECT * FROM geodesic_olx_country_language cl JOIN geodesic_olx_languages ol ON cl.language_id = ol.language_id WHERE Language_Name LIKE '%Engl%';'
+`SELECT * FROM geodesic_olx_country_language cl JOIN geodesic_olx_languages ol ON cl.language_id = ol.language_id WHERE Language_Name LIKE '%Engl%';`
