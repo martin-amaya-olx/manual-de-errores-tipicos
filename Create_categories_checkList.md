@@ -29,7 +29,7 @@
 
 **Ver la estructura completa como el csv**
 ```	
-	SELECT gccl.country_id AS "Country ID",
+     SELECT gccl.country_id AS "Country ID",
 	    gc.parent_id AS "Parent ID",
 	     (	SELECT category_name 
 		  	  FROM geodesic_classifieds_categories_languages
