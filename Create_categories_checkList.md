@@ -28,8 +28,9 @@
 `SELECT * FROM geodesic_olx_country_language cl JOIN geodesic_olx_languages ol ON cl.language_id = ol.language_id WHERE Language_Name LIKE '%Engl%';`
 
 **Ver la estructura completa como el csv**
-      `SELECT gccl.country_id AS "Country ID",`
-	`    gc.parent_id AS "Parent ID",`
+```	
+	SELECT gccl.country_id AS "Country ID",
+	    gc.parent_id AS "Parent ID",
 	     (	SELECT category_name 
 		  	  FROM geodesic_classifieds_categories_languages
 		 	 WHERE category_id = gc.parent_id
@@ -47,4 +48,5 @@
        WHERE gccl.category_id IN (821,822,823,824,876)
          AND gccl.language_id IN (10,1)
          AND gccl.country_id = 167
-    ORDER BY gccl.language_id DESC;`
+    ORDER BY gccl.language_id DESC;
+```
