@@ -26,3 +26,25 @@
 
 **ver idiomas de paìses**
 `SELECT * FROM geodesic_olx_country_language cl JOIN geodesic_olx_languages ol ON cl.language_id = ol.language_id WHERE Language_Name LIKE '%Engl%';`
+
+**Ver la estructura completa como el csv**
+      `SELECT gccl.country_id AS "Country ID",
+	     gc.parent_id AS "Parent ID",
+	     (	SELECT category_name 
+		  	  FROM geodesic_classifieds_categories_languages
+		 	 WHERE category_id = gc.parent_id
+		   	   AND language_id = gccl.language_id
+		   	   AND country_id  = gccl.country_id
+	      		 GROUP BY category_name
+	     ) AS "Parent Name",
+	     gccl.category_id AS "Category ID",
+	     gccl.category_name AS " Category Name",
+	     gccl.category_textlink AS "Slug",
+	     gccl.language_id AS "Languaje"
+
+    	FROM geodesic_classifieds_categories_languages gccl
+   LEFT JOIN geodesic_categories gc ON gccl.category_id = gc.category_id
+       WHERE gccl.category_id IN (821,822,823,824,876)
+         AND gccl.language_id IN (10,1)
+         AND gccl.country_id = 167
+    ORDER BY gccl.language_id DESC;`
